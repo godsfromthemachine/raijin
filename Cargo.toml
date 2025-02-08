@@ -1,6 +1,14 @@
 [package]
-name = "raijin"
+name = "deepseek-inference"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+ort = "1.16.3"
+anyhow = "1.0"
+ndarray = "0.15"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8"
+half = "2.4.1"
+tokenizers = "0.21"
