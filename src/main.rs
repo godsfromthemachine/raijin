@@ -10,7 +10,7 @@ use rand::distributions::WeightedIndex;
 use rand::prelude::*;
 
 // Constants matching model requirements
-const TOTAL_SEQUENCE: usize = 1024; 
+const TOTAL_SEQUENCE: usize = 1024;   // Changed from 128 to match model expectations
 const NUM_LAYERS: usize = 28;
 const HEAD_DIM: usize = 128;
 const PAST_SEQ_LEN: usize = TOTAL_SEQUENCE - 1;
@@ -188,6 +188,7 @@ fn main() -> Result<()> {
         current_length += 1;
 
         // Decode and print token
+        println!("Generated Token ID: {}", token_id);
         let decoded_token = match tokenizer.decode(&[token_id], true) {
             Ok(token) => token,
             Err(_) => "[UNK]".to_string(),
